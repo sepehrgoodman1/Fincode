@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery UI Autocomplete - Multiple values</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+    />
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <style>
+    
+    </style>
+    <script>
+      $(function () {
+        //Get the Data from a JSON or Hidden Feild
+        var availableTags = ["Moving Average", "Cross Over"]; // array of autocomplete words
+        var minWordLength = 2;
+        function split(val) {
+          return val.split(" ");
+        }
+
+        function extractLast(term) {
+          return split(term).pop();
+        }
+        $("#editor") // jQuery Selector
+          // don't navigate away from the field on tab when selecting an item
+          .bind("keydown", function (event) {
+            if (
+              event.keyCode === $.ui.keyCode.TAB &&
+              $(this).data("ui-autocomplete").menu.active
+            ) {
+              event.preventDefault();
+            }
+          })
+          .autocomplete({
+            minLength: minWordLength,
+            source: function (request, response) {
+              var stringArray = request["term"].split(/(\s+)/);
+
+              // delegate back to autocomplete, but extract the last term
+              var term = extractLast(stringArray[stringArray.length - 1]);
+              if (term.length >= minWordLength) {
+                response($.ui.autocomplete.filter(availableTags, term));
+              }
+            },
+            focus: function () {
+              // prevent value inserted on focus
+              return false;
+            },
+            select: function (event, ui) {
+              var value_now = document.getElementById("editor").innerText;
+              var a = value_now.split(/(\s+)/);
+
+              var final = "";
+              for (var i = 0; i < a.length - 1; i++) {
+                final += a[i];
+              }
+
+              document.getElementById("editor").innerText =
+                final + ui.item.value;
+              return false;
+            },
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="editor" contenteditable="true"></div>
+    <script>
+      // SQL keywords
+      var keywords = ["MOVING", "AVERAGE", "CROSS", "OVER"];
+      // Keyup event
+      $("#editor").on("keyup", function (e) {
+        // Space key pressed
+        if (e.keyCode == 32) {
+          var newHTML = "";
+          // Loop through words
+          $(this)
+            .text()
+            .replace(/[\s]+/g, " ")
+            .trim()
+            .split(" ")
+            .forEach(function (val) {
+              // If word is statement
+              if (keywords.indexOf(val.trim().toUpperCase()) > -1)
+                newHTML += "<span class='statement'>" + val + "&nbsp;</span>";
+              else newHTML += "<span class='other'>" + val + "&nbsp;</span>";
+            });
+          $(this).html(newHTML);
+
+          // Set cursor postion to end of text
+          var child = $(this).children();
+          var range = document.createRange();
+          var sel = window.getSelection();
+          range.setStart(child[child.length - 1], 1);
+          range.collapse(true);
+          sel.removeAllRanges();
+          sel.addRange(range);
+          this.focus();
+        }
+      });
+    </script>
+  </body>
+</html>

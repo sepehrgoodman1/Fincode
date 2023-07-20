@@ -1,0 +1,2126 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --MainColor: #357ec7;
+  --MainColorHover: #29649f;
+  --HeightNav: 70px;
+  --Red: #d70040;
+  --Standard: #29bbca;
+  --Premium: #eba825;
+  --Free: #ed6035;
+}
+
+.Wrapper {
+  display: flex;
+  width: 100%;
+}
+.SideMenu {
+  width: 115px;
+  height: calc(100vh - var(--HeightNav) - 2px);
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+.ItemSide {
+  flex: 1;
+  color: rgb(0 0 0 / 65%);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.116);
+  border-right: 3px solid rgba(0, 0, 0, 0.116);
+  border-left: 3px solid rgba(0, 0, 0, 0.116);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.ItemSideActive * {
+  color: var(--MainColor);
+}
+.ItemSideActive {
+  border-bottom: 3px solid #357ec77a;
+  border-right: 3px solid #357ec77a;
+  border-left: 3px solid #357ec77a;
+  box-shadow: 0 0 65px inset #357ec7ba;
+}
+.TextSide {
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.IconSide {
+  font-size: 24px;
+}
+.RightSide {
+  padding: 10px;
+  overflow-y: auto;
+  max-height: calc(100vh - var(--HeightNav));
+  scrollbar-color: #242424 #eef0f3;
+  scrollbar-width: thin;
+}
+/* width */
+.RightSide::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+.RightSide::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.RightSide::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.RightSide::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.NavBar {
+  width: 100%;
+  height: var(--HeightNav);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.116);
+  padding-right: 20px;
+}
+.WebsiteName {
+  color: var(--MainColor);
+  padding-left: 30px;
+  font-size: 19px;
+  margin: 0;
+  font-weight: 600;
+}
+.P_WebsiteName {
+  /* border-right: 2px solid rgba(0, 0, 0, 0.116); */
+  height: 100%;
+  padding-right: 28px;
+  display: flex;
+  align-items: center;
+}
+.BtnLoginGoogle {
+  border: 2px solid var(--MainColor);
+  background-color: transparent;
+  padding: 6px 18px 8px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--MainColor);
+  transition: all 0.3s;
+}
+.BtnLoginGoogle:hover {
+  background-color: var(--MainColor);
+  color: white;
+}
+
+.ImgGoogle {
+  width: 20px;
+  position: relative;
+  left: 5px;
+  top: 4px;
+  vertical-align: inherit !important;
+}
+.IconBell {
+  color: rgb(0 0 0 / 65%);
+  padding: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 18px;
+  position: relative;
+  top: 1px;
+}
+.PosRel {
+  position: relative;
+}
+.IconArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -5px;
+  font-size: 40px;
+  z-index: 10;
+  color: var(--MainColorHover);
+  cursor: pointer;
+}
+.LeftSideClose {
+  width: 50px;
+}
+.FadeText {
+  opacity: 0;
+}
+.DisNone {
+  display: none !important;
+}
+
+/* Srart Ai  */
+.WrapperRobot {
+  display: flex;
+}
+.SideRobot {
+  width: 300px;
+  border-left: 1px solid rgba(0, 0, 0, 0.167);
+  min-height: calc(100vh - var(--HeightNav) - 20px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ItemWrapper {
+  padding: 16px 24px 16px 16px;
+  font-size: 16px;
+}
+.ItemRobot {
+  color: #ffae42;
+  margin-bottom: 10px;
+}
+.ItemRobotActive {
+  color: var(--MainColor);
+  font-size: 18px;
+}
+.RobotArea {
+  flex: 1;
+  padding: 0 30px 30px 30px;
+  overflow-y: auto;
+  max-height: calc(100vh - 138px);
+  scrollbar-color: #888 #f1f1f1;
+  scrollbar-width: thin;
+  padding-bottom: 200px;
+  margin-top: 8px;
+}
+.RobotArea::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.RobotArea::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.RobotArea::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.RobotArea::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.FitIcon {
+  position: relative;
+  top: 3px;
+  margin-left: 2px;
+}
+.TaeenProj {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--MainColor);
+}
+.TaeenProj i {
+  font-size: 24px;
+  margin-right: 5px;
+}
+.RobotImage {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+}
+.ChatBox {
+  display: flex;
+  margin-bottom: 42px;
+}
+.TextChat {
+  font-size: 16px;
+  line-height: 28px;
+  margin-right: 16px;
+  padding: 15px;
+  width: 100%;
+  border-radius: 0px 12px 12px 12px;
+  background-color: white;
+  border: 2px solid rgba(0, 0, 0, 0.067);
+  box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.077);
+}
+.P_TextChat {
+  width: 60%;
+}
+.OptionsChat {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 12px;
+}
+.OptionOfChat {
+  font-size: 16px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  border: 2px solid rgba(0, 0, 0, 0.059);
+  background-color: white;
+  box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.077);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.OptionOfChat_Active {
+  color: var(--MainColor);
+  border: 2px solid var(--MainColor);
+}
+.form-step_New label {
+  font-size: 20px !important;
+}
+.HistoryProj {
+  padding: 15px 30px;
+  width: 100%;
+  border-top: 1px solid #00000024;
+  bottom: 0;
+  margin-top: 20px;
+  background-color: white;
+}
+.TitHistory {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #000000c4;
+}
+.WrapperSteps {
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-color: #888 #f1f1f1;
+  scrollbar-width: thin;
+}
+.ItemHistory {
+  font-size: 16px;
+  background-color: #ebf5fb;
+  padding: 4px 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+.P_ItemHistory {
+  overflow-y: auto;
+  max-height: 300px;
+  scrollbar-color: #888 #f1f1f1;
+  scrollbar-width: thin;
+}
+.P_ItemHistory::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.P_ItemHistory::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.P_ItemHistory::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.P_ItemHistory::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.WrapperSteps::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.WrapperSteps::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.WrapperSteps::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.WrapperSteps::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.BtnAdd {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: transparent;
+  flex: 1;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.P_DemoBtn {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 24px;
+  margin-top: 15px;
+}
+.RobotNav {
+  background-color: white;
+  padding: 10px;
+  width: calc(100% - 115px);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  border-top: 1px solid #00000026;
+}
+.P_BoxAi {
+  display: block;
+  direction: ltr;
+}
+.BoxAi {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  padding: 10px;
+  display: inline-block;
+  justify-content: center;
+  font-size: 20px;
+  background-color: #00000017;
+  margin-left: 5px;
+  cursor: pointer;
+  position: relative;
+}
+.BoxAi_Check {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  padding: 10px;
+  display: inline-block;
+  justify-content: center;
+  font-size: 20px;
+  background-color: #00000017;
+  margin-left: 5px;
+  cursor: pointer;
+  position: relative;
+}
+.C_BoxAi {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  position: absolute;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+.RadioButAi {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.ItemRobotActive {
+  color: var(--MainColor);
+}
+.P_DemoBtn {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 24px;
+  margin-top: 15px;
+}
+
+.AddBtn {
+  border: 2px solid var(--MainColor);
+  background-color: var(--MainColor);
+  color: white;
+}
+.AddBtn:hover {
+  background-color: var(--MainColorHover);
+  color: white;
+}
+.DemoBtn:hover {
+  background-color: var(--MainColor);
+  color: white;
+}
+.DemoBtn {
+  border: 2px solid var(--MainColor);
+  color: var(--MainColor);
+}
+.P_DemoBtn {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 24px;
+  margin-top: 15px;
+}
+
+/*                               Start Radio                           * /
+
+/* The container */
+.RadioAiContainer {
+  display: inline-block !important;
+  position: relative;
+  padding: 10px;
+  margin-bottom: 3px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.RadioAiContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmarkNew {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  height: 25px;
+  width: 25px;
+  background-color: #2196f3;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.RadioAiContainer:hover input ~ .checkmarkNew {
+  background-color: #2196f3;
+}
+
+/* When the radio button is checked, add a blue background */
+.RadioAiContainer input:checked ~ .checkmarkNew {
+  background-color: #2196f3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.RadioAiContainer .checkmarkNew:after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.RadioAiContainer input:checked ~ .checkmarkNew:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.RadioAiContainer .checkmarkNew:after {
+  top: 7px;
+  left: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* Create a custom radio button */
+.NotChecked .checkmarkNew {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.RadioAiContainer.NotChecked:hover input ~ .checkmarkNew {
+  background-color: white;
+}
+
+/* When the radio button is checked, add a blue background */
+.RadioAiContainer.NotChecked input:checked ~ .checkmarkNew {
+  background-color: white;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.NotChecked .checkmarkNew:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.RadioAiContainer.NotChecked input:checked ~ .checkmarkNew:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Style the indicator (dot/circle) */
+.RadioAiContainer.NotChecked .checkmarkNew:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.ChooseCondition {
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+  top: 2px;
+}
+.form-select.FormSelect {
+  padding-right: 33px !important;
+}
+
+/* Start Check Box   */
+
+/* The container */
+.ContainerCheckBoxes {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.ContainerCheckBoxes input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.CheckmarkCjeckBox {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+/* On mouse-over, add a grey background color */
+.ContainerCheckBoxes:hover input ~ .CheckmarkCjeckBox {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.ContainerCheckBoxes input:checked ~ .CheckmarkCjeckBox {
+  background-color: #2196f3;
+}
+
+/* Create the CheckmarkCjeckBox/indicator (hidden when not checked) */
+.CheckmarkCjeckBox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the CheckmarkCjeckBox when checked */
+.ContainerCheckBoxes input:checked ~ .CheckmarkCjeckBox:after {
+  display: block;
+}
+
+/* Style the CheckmarkCjeckBox/indicator */
+.ContainerCheckBoxes .CheckmarkCjeckBox:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.ModalAi {
+  padding: 20px 25px !important;
+  border-radius: 12px !important;
+}
+.IconDeatilsAi {
+  background-color: white;
+  position: absolute;
+  bottom: 12px;
+  border-radius: 50%;
+  padding: 4px 13px 2px 13px;
+  right: 12px;
+  font-size: 16px;
+}
+.IconImageAi {
+  background-color: white;
+  position: absolute;
+  bottom: 12px;
+  border-radius: 50%;
+  padding: 6px 9px 2px 9px;
+  right: 49px;
+  font-size: 15px;
+}
+.ImgAi {
+  width: 100%;
+}
+
+/* Progressbar */
+.progressbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+  margin: 0rem 0 4rem;
+}
+
+.progressbar::before,
+.progress {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background-color: #dcdcdc;
+  z-index: -1;
+}
+
+.progress {
+  background-color: var(--MainColor) !important ;
+  width: 0%;
+  transition: 0.3s;
+}
+.FixBugProgress {
+  background-color: #e9ecef !important;
+  width: 100px;
+  content: unset !important;
+  position: relative;
+  top: unset !important;
+  transform: unset !important;
+  height: auto;
+  z-index: unset !important;
+}
+
+.progress-step {
+  width: 2.1875rem;
+  height: 2.1875rem;
+  background-color: #dcdcdc;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-step::before {
+  counter-increment: step;
+  content: counter(step);
+}
+
+.progress-step::after {
+  content: attr(data-title);
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.progress-step-active {
+  background-color: var(--MainColor) !important;
+  color: #f3f3f3;
+}
+.progress-step-active_New {
+  background-color: var(--MainColor) !important;
+  color: #f3f3f3;
+}
+
+.progressbar::before,
+.progress_New {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background-color: #dcdcdc;
+  z-index: -1;
+}
+
+.progress_New {
+  background-color: var(--MainColor);
+  width: 0%;
+  transition: 0.3s;
+}
+
+.progress-step_New {
+  width: 2.1875rem;
+  height: 2.1875rem;
+  background-color: #dcdcdc;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-step_New::before {
+  counter-increment: step;
+  content: counter(step);
+}
+
+.progress-step_New::after {
+  content: attr(data-title);
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Form */
+.FormOfStep {
+  width: 100%;
+  border-radius: 0.35rem;
+  padding: 1.5rem;
+}
+
+.form-step {
+  display: none;
+  transform-origin: top;
+  animation: animate 0.5s;
+}
+.form-step_New {
+  display: none;
+  transform-origin: top;
+  animation: animate 0.5s;
+}
+
+.form-step-active {
+  display: block;
+}
+.Mt_20 {
+  margin-top: 20px;
+}
+.input-group {
+  margin: 2rem 0;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(1, 0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+/* Button */
+.btns_group {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 25px;
+}
+.btns_groupNew {
+  display: flex;
+  width: 260px;
+  gap: 10px;
+  position: relative;
+  top: 27px;
+}
+.btns_group1 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  flex: 1;
+}
+.btns_group_Last {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.btn_Step {
+  padding: 9px 21px 8px 21px;
+  text-decoration: none;
+  background-color: var(--MainColor);
+  color: #f3f3f3;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid var(--MainColor);
+}
+.btn_Step:hover {
+  background-color: var(--MainColorHover);
+  color: white;
+}
+
+.btn_Step_Confirm {
+  padding: 6px 21px 8px 21px;
+  text-decoration: none;
+  background-color: var(--MainColor);
+  color: #f3f3f3;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+  border: 2px solid var(--MainColor);
+}
+.btn_Step_Confirm:hover {
+  background-color: var(--MainColorHover);
+  color: white;
+}
+
+.PayOnlineBtn {
+  padding: 6px 21px 8px 21px;
+  text-decoration: none;
+  background-color: var(--MainColor);
+  color: #f3f3f3;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+  border: 2px solid var(--MainColor);
+}
+.PayOnlineBtn:hover {
+  background-color: var(--MainColorHover);
+  color: white;
+}
+
+.PrevBtn {
+  padding: 6px 21px 8px 21px;
+  text-decoration: none;
+  background-color: transparent;
+  color: var(--MainColor);
+  text-align: center;
+  border-radius: 6px;
+  border: 2px solid var(--MainColor);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.PrevBtn:hover {
+  background-color: var(--MainColor);
+  color: white;
+}
+.progress-step.ProNew::after {
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.P_FormOfStep {
+  display: flex;
+  margin-top: 40px;
+  min-height: 360px;
+  align-items: center;
+}
+.P_FormOfStepNew {
+  display: flex;
+  justify-content: center;
+}
+.P_ImgStep {
+  width: 30vw;
+  margin-right: 50px;
+}
+.P_ImgStepNew {
+  width: fit-content;
+  margin-right: 30px;
+}
+.P_ImgStep > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px 0 0 8px;
+}
+.P_Progresss {
+  position: relative;
+  top: 20px;
+  padding: 0 50px;
+  width: 500px;
+}
+.P_OfFile {
+  display: flex;
+  align-items: center;
+}
+.W_100 {
+  width: 100%;
+}
+
+/* Start Multi Step  */
+
+/* Global Stylings */
+.label_Step {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.input_Step {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+/* end Multi Step  */
+#BtnFisnish {
+  white-space: nowrap;
+}
+
+.RightSide {
+  flex: 1;
+}
+.BgBlueOv {
+  width: 100%;
+  height: 250px;
+  background-color: var(--MainColor);
+  color: white;
+  position: relative;
+  border-radius: 8px;
+}
+.OVText {
+  font-size: 30px;
+  position: absolute;
+  left: 40px;
+  top: 30px;
+}
+.OChart {
+  font-size: 26px;
+  color: #ffffffa8;
+}
+.OvDeskText {
+  font-size: 17px;
+  position: absolute;
+  left: 40px;
+  color: #ffffffa8;
+  top: 75px;
+}
+.BoxWhite {
+  padding: 30px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 5px 3px 20px #0000001f;
+}
+.P_30_10 {
+  padding: 30px 10px;
+}
+.P_30_0 {
+  padding: 30px 0px;
+}
+.P_AreaWhite {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  position: relative;
+  bottom: 100px;
+  padding: 0 20px;
+  gap: 15px;
+  text-align: center;
+}
+.P_AreaWhite1 {
+  display: flex;
+  position: relative;
+  bottom: 132px;
+  padding: 0 20px;
+  gap: 15px;
+  text-align: center;
+}
+p {
+  text-align: justify;
+}
+.PrimaryColor {
+  color: var(--MainColor);
+}
+.ImgWork {
+  width: 100%;
+  max-width: 350px;
+}
+.ImgBotFly {
+  width: 100%;
+  max-width: 200px;
+}
+
+.card {
+  background-color: #fff !important;
+  border-radius: 10px !important;
+  border: none !important;
+  position: relative !important;
+  margin-bottom: 30px !important;
+  
+  gap: 20px;
+  box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1),
+    0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1),
+    0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12),
+    0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1) !important;
+}
+.l-bg-cherry {
+  background: linear-gradient(to right, #493240, #f09) !important;
+  color: #fff;
+}
+
+.l-bg-blue-dark {
+  background: linear-gradient(to right, #373b44, #4286f4) !important;
+  color: #fff;
+}
+
+.l-bg-green-dark {
+  background: linear-gradient(to right, #0a504a, #38ef7d) !important;
+  color: #fff;
+}
+
+.l-bg-orange-dark {
+  background: linear-gradient(to right, #a86008, #ffba56) !important;
+  color: #fff;
+}
+
+.card .card-statistic-3 .card-icon-large .fas,
+.card .card-statistic-3 .card-icon-large .far,
+.card .card-statistic-3 .card-icon-large .fab,
+.card .card-statistic-3 .card-icon-large .fal {
+  font-size: 110px;
+}
+
+.card .card-statistic-3 .card-icon {
+  text-align: center;
+  line-height: 50px;
+  margin-left: 15px;
+  color: #000;
+  position: absolute;
+  right: -5px;
+  top: 20px;
+  opacity: 0.1;
+}
+
+.l-bg-cyan {
+  background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
+  color: #fff;
+}
+
+.l-bg-green {
+  background: linear-gradient(135deg, #23bdb8 0%, #43e794 100%) !important;
+  color: #fff;
+}
+
+.l-bg-orange {
+  background: linear-gradient(to right, #f9900e, #ffba56) !important;
+  color: #fff;
+}
+
+.l-bg-cyan {
+  background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
+  color: #fff;
+}
+
+ul.timeline {
+  list-style-type: none;
+  position: relative;
+  overflow: auto;
+  max-height: 410px;
+  padding-right: 15px;
+  scrollbar-color: #242424 #eef0f3;
+  scrollbar-width: thin;
+}
+
+/* width */
+.timeline::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.timeline::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+/* Handle */
+.timeline::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+.timeline::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+ul.timeline:before {
+  content: " ";
+  background: #d4d9df;
+  display: inline-block;
+  position: absolute;
+  left: 29px;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+ul.timeline > li {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+ul.timeline > li:before {
+  content: " ";
+  background: white;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #22c0e8;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 400;
+}
+.TextStart {
+  text-align: start;
+}
+.NormalLink {
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.Between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.PrivateSpan {
+  padding: 4px 12px;
+  border-radius: 50px;
+  background-color: var(--Red);
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+}
+.PublicSpan {
+  padding: 4px 12px;
+  border-radius: 50px;
+  background-color: var(--MainColorHover);
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+}
+.NormalLink:hover {
+  color: var(--MainColorHover);
+}
+.WrapperTables {
+  padding: 15px;
+}
+.ContainerRegister {
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.162);
+  width: 100%;
+  max-width: 600px;
+}
+.Center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.TabReg {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.751);
+  transition: all 0.3s;
+  padding-bottom: 8px;
+  transition: all 0.3s;
+}
+.TabReg:hover {
+  color: var(--MainColor);
+}
+.MyInput {
+  padding: 10px;
+  max-height: 40px;
+  border: 2px solid rgba(0, 0, 0, 0.133);
+  border-radius: 8px;
+  width: 100%;
+}
+.MyInput:focus {
+  outline: 2px solid var(--MainColor);
+  border-color: transparent;
+}
+.P_MyInput {
+  flex: 1;
+}
+.P_MyInput label {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+.P_TwoInput {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+.EyeIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #00000096;
+}
+.RegisterBtn {
+  padding: 6px 16px;
+  background-color: var(--MainColor);
+  color: white;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.RegisterBtn:hover {
+  background-color: var(--MainColorHover);
+}
+
+.TabReg_Active {
+  color: var(--MainColor);
+  border-bottom: 3px solid var(--MainColor);
+}
+
+.InputVer {
+  width: 70px;
+  height: 70px;
+  padding-left: 25px;
+  border-radius: 12px;
+  border: 2px solid #00000052;
+  font-size: 26px;
+}
+.InputVer:focus {
+  outline: 2px solid var(--MainColor);
+  border: none;
+}
+.P_InputVer {
+  display: flex;
+  justify-content: space-evenly;
+}
+.AreaReg {
+  position: relative;
+  top: -86px;
+  z-index: 100;
+  background-color: #fcfcfcf5;
+}
+.P_TwoBtn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.Flex1 {
+  flex: 1;
+}
+.RegisterBtnGoogle {
+  padding: 4px 12px;
+  background-color: white;
+  border: 2px solid var(--MainColor);
+  border-radius: 8px;
+  color: var(--MainColor);
+  font-weight: 500;
+}
+.LoadingArea {
+  width: 50%;
+  height: 14px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.071);
+  margin: 10px auto 50px auto;
+  position: relative;
+  overflow: hidden;
+}
+.LoadingBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: var(--MainColorHover);
+  color: white;
+  animation-name: Load;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  width: 100%;
+}
+.P_All_Loading {
+  color: var(--MainColorHover);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+/* The animation code */
+@keyframes Load {
+  0% {
+    width: 0%;
+  }
+  11% {
+    width: 25%;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.ButtonChoose {
+  padding: 6px 16px;
+  border-radius: 6px;
+  margin-top: 30px;
+  border-radius: 6px;
+  background-color: var(--MainColor);
+  color: white;
+  border: none;
+  transition: all 0.3s;
+}
+.ButtonChoose:hover {
+  background-color: var(--MainColorHover);
+}
+.ImgPerson {
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  object-fit: cover;
+  margin-right: 12px;
+}
+.P_texAreaUser {
+  display: flex;
+}
+.TextAreaUser {
+  width: 100%;
+  border-radius: 12px;
+  border: 2px solid #00000033;
+  padding: 12px;
+}
+.TextAreaUser:focus {
+  outline: 2px solid var(--MainColor);
+  border-color: none;
+}
+.PText {
+  width: 60%;
+  max-width: 600px;
+}
+.Flex1 {
+  flex: 1;
+}
+.RwapperCategory {
+  margin-top: 20px;
+}
+.CategoryName {
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 2px solid rgba(0, 0, 0, 0.182);
+  box-shadow: 4px 2px 15px rgb(0 0 0 / 5%);
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.CloseIc {
+  margin-left: 7px;
+  color: var(--Red);
+  cursor: pointer;
+}
+.P_Pricing {
+  position: relative;
+  bottom: 133px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.ItemPrice {
+  max-width: 375px;
+  flex: 1;
+  padding: 20px;
+  border-radius: 12px;
+  border: 4px solid rgba(0, 0, 0, 0.056);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.071);
+  background-color: white;
+  position: relative;
+  padding-bottom: 200px;
+}
+
+.AmountOfPrice {
+  color: white;
+  padding: 20px 10px;
+  width: 100%;
+  border-radius: 50px;
+  text-align: center;
+}
+.Mo {
+  font-size: 16px;
+  color: rgb(255 255 255 / 83%);
+}
+.AbilityPrice {
+  color: rgba(0, 0, 0, 0.422);
+}
+
+.SelectPlan {
+  padding: 8px 18px;
+  border-radius: 50px;
+  border: none;
+  color: white;
+}
+
+.BGStanard {
+  background-color: var(--Standard);
+}
+.BGFree {
+  background-color: var(--Free);
+}
+.BGPremium {
+  background-color: var(--Premium);
+}
+.ColorStanard {
+  color: var(--Standard);
+}
+.ColorFree {
+  color: var(--Free);
+}
+.ColorPremium {
+  color:  var(--Premium);
+}
+.SelectedPlanFree {
+  border: 3px solid var(--Free);
+}
+.SelectedPlanStandard {
+  border: 3px solid var(--Standard);
+}
+.SelectedPlanPremium {
+  border: 3px solid var(--Premium);
+}
+.P_box {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 25px;
+}
+.Box {
+  padding: 25px;
+  border: 2px solid rgba(0, 0, 0, 0.062);
+  border-radius: 12px;
+  box-shadow: 5px 5px 17px rgba(0, 0, 0, 0.066);
+  background-color: white;
+  position: relative;
+}
+
+.ImgTrade {
+  border-radius: 50px;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+}
+.ImgAndTitle {
+  display: flex;
+  align-items: center;
+}
+.P_Detail {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.Fs12 {
+  font-size: 12px;
+}
+
+.Fw500 {
+  font-weight: 500;
+}
+.GreenArea {
+  background-color: #eafbec;
+  color: #339942;
+  padding: 0 5px;
+  margin-top: 2px;
+  width: 100%;
+  border-radius: 4px;
+}
+.GrayArea {
+  background-color: hsla(0, 0%, 46.7%, 0.1);
+  color: #777;
+  padding: 0 5px;
+  margin-top: 2px;
+  width: 100%;
+  border-radius: 4px;
+}
+.Flex1 {
+  flex: 1;
+}
+.Follow {
+  background-color: var(--MainColor);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  transition: all 0.3s;
+}
+.Follow:hover {
+  background-color: var(--MainColorHover);
+}
+.P_Ai_Side {
+  display: flex;
+}
+.MedalImage {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  width: 35px;
+}
+.Pl_20 {
+  padding-left: 20px;
+}
+.WhiteAreaTable {
+  padding: 12px;
+  border-radius: 10px;
+  background-color: white;
+  border: 2px solid rgba(0, 0, 0, 0.064);
+  height: 65px;
+  width: 100%;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  padding-right: 32px;
+  max-width: calc(100% - 450px);
+  transition: all 0.6s linear;
+}
+.CloseWhiteTable {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  cursor: pointer;
+  color: var(--Red);
+}
+.CloseWhiteArea {
+  width: 0%;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+}
+#TextInfoTable,
+#CloseWhiteTable {
+  transition: all 0.6s;
+}
+
+.CloseWhiteArea #TextInfoTable,
+.CloseWhiteArea #CloseWhiteTable {
+  opacity: 0;
+}
+.InfoIcon {
+  position: absolute;
+  left: 22px;
+  top: 22px;
+  color: white;
+  font-size: 28px;
+}
+.MoreBtn {
+  background-color: white;
+  border: none;
+  border-radius: 6px;
+  color: var(--MainColor);
+  padding: 5px 12px;
+  transition: all 0.3s;
+  opacity: 100%;
+  cursor: pointer;
+}
+.MoreBtn:hover {
+  opacity: 70%;
+}
+.RobotImg {
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+.P_TypingArea {
+  flex: 1;
+  margin-left: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 20px rgb(0 0 0 / 13%);
+}
+
+.NewBgTable {
+  background: radial-gradient(
+    ellipse at right bottom,
+    #2e2e2e,
+    #3cafdb 100%
+  ) !important;
+}
+.W100 {
+  width: 100%;
+}
+.ImgProfile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+.P_imgProfile {
+  display: flex;
+  align-items: center;
+  border: 2px solid rgba(0, 0, 0, 0.085);
+  padding: 5px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.P_Logout {
+  position: absolute;
+  top: 48px;
+  display: none;
+  left: 0;
+  z-index: 10000;
+  background-color: white;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1.5px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.3s;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.06);
+  white-space: nowrap;
+  width: fit-content;
+}
+.Logout {
+  transition: all 0.3s;
+}
+.Logout:hover {
+  color: var(--Red);
+}
+
+.P_imgProfile:hover .P_Logout {
+  display: block;
+}
+.IconExit {
+  position: relative;
+  top: 1.5px;
+  margin-right: 8px;
+}
+
+.BadgeBot {
+  padding: 4px 6px;
+  border-radius: 6px;
+  margin-left: 5px;
+  border: 2px solid;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+}
+.FreeColor {
+  border-color: 2px solid #ed6035;
+  color: #ed6035;
+}
+.StandardColor {
+  border-color: 2px solid #29bbca;
+  color: #29bbca;
+}
+.PremiumColor {
+  border-color: 2px solid #eba825;
+  color: #eba825;
+}
+
+.FixPadding {
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+.Card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.093);
+}
+.Op5 {
+  opacity: 0.5;
+  font-family: 300;
+}
+.ColorGray {
+  color: #3e5569;
+}
+.DownloadBtn {
+  padding: 6px 16px;
+  border-radius: 6px;
+  background-color: white;
+  color: white;
+  border: 2px solid var(--MainColor);
+  color: var(--MainColor);
+  font-weight: 600;
+  transition: all 0.3s;
+}
+.DownloadBtn:hover {
+  background-color: var(--MainColor);
+  color: white;
+}
+
+#editor {
+  width: 100%;
+  min-height: 200px;
+  height: fit-content;
+  padding: 10px;
+  background-color: white;
+  /* color: white; */
+  border: 2px solid #00000021;
+  box-shadow: 5px 5px 20px #0000001f;
+  border-radius: 10px;
+  font-size: 14px;
+  color: black;
+  font-family: monospace;
+}
+
+#editor:focus-visible {
+  outline-color: var(--MainColor);
+}
+.statement {
+  color: orange;
+}
+.P_TwArea{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.FourArea{
+  margin-top: 50px;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  color: var(--MainColor);
+}
+.IconChart{
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+.P_Chartjs{
+  flex: 1;
+}
+.P_MonthArea{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  gap: 8px;
+}
+.Month{
+  width: fit-content;
+  padding: 4px 9px;
+  border: 2px solid var(--Standard);
+  color: var(--Standard);
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.Month_Selected{
+  background-color: var(--Standard);
+  color: white;
+}
+.Month:hover{
+  background-color: var(--Standard);
+  color: white;
+}
+
+.MonthPre{
+  width: fit-content;
+  padding: 4px 9px;
+  border: 2px solid var(--Premium);
+  color: var(--Premium);
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.MonthPre_Selected{
+  background-color: var(--Premium);
+  color: white;
+}
+.MonthPre:hover{
+  background-color: var(--Premium);
+  color: white;
+}
+
+.P_BtnSelectPlan{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column;
+    gap: 14px;
+ 
+    width: 88%;
+}
+.IconPay{
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+.P_Pay{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+.ItemPay{
+  padding: 8px;
+  gap: 5px;
+    border-radius: 8px;
+    border: 2px solid rgba(0, 0, 0, 0.105);
+    cursor: pointer;
+    color: rgb(0 0 0 / 50%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+.ItemPay_Sel_Standard{
+  border-color: var(--Standard);
+  color: var(--Standard);
+  box-shadow: 0px 0 7px var(--Standard);
+}
+
+
+.ItemPay_Sel_Pre{
+  border-color: var(--Premium);
+  color: var(--Premium);
+  box-shadow: 0px 0 7px var(--Premium);
+}
+.Fs14{
+  font-size: 14px !important;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 960px) {
+  .P_Chartjs{
+    flex: 1;
+    overflow-x: auto;
+    width: 100%;
+  }
+  .C_Chartjs{
+    width: 400px;
+  }
+  .P_TwArea , .FourArea{
+    flex-direction: column;
+    gap: 30px;
+  }
+  .Mb_G10{
+    gap: 10px !important;
+  }
+  .P_TwoBtn {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .RegisterBtn , .RegisterBtnGoogle  {
+    width: 100%;
+  }
+  .TabReg {
+    font-size: 18px;
+  }
+  .P_MyInput {
+    width: 100%;
+  }
+
+  .P_TwoInput {
+    flex-direction: column;
+    gap: 0;
+  }
+  #InfoIcon,
+  .MoreBtn {
+    display: none;
+  }
+  .P_AreaWhite {
+    bottom: 150px;
+  }
+  .OvDeskText {
+    top: 75px;
+  }
+
+  .P_30_0 {
+    padding: 30px 0px !important;
+  }
+  .FixPadding {
+    padding: 0 10px !important;
+  }
+  .ImgBotFly {
+    margin-top: 15px;
+  }
+  .Mb_Column {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .P_AreaWhite {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 5px;
+  }
+  .P_Pricing {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+  .P_AreaWhite1 {
+    flex-direction: column;
+  }
+  .P_All_Loading {
+    width: fit-content;
+  }
+  .P_box {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .Box {
+    width: 100%;
+  }
+  #P_BoxInfo {
+    padding-right: 10px;
+  }
+  .P_Ai_Side {
+    display: flex;
+    flex-direction: column;
+  }
+  .SideRobot {
+    border: 2px solid rgba(0, 0, 0, 0.167);
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 20px;
+    width: calc(100% - 10px);
+  }
+  .progress-step.ProNew::after {
+    font-size: 0.7rem;
+  }
+  .progress-step {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+  .RobotNav {
+    padding: 0;
+    width: calc(100% - 50px);
+  }
+  .BtnLoginGoogle {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  .WebsiteName {
+    font-size: 16px;
+  }
+  .Mb_DisNone {
+    display: none;
+  }
+
+  .RobotArea {
+    padding: 0;
+    padding-bottom: 130px;
+  }
+  .ChatBox {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+  }
+  .P_TextChat {
+    width: 100%;
+    padding: 0 10px;
+  }
+  .WebsiteName {
+    padding-left: 20px;
+  }
+  .TextChat {
+    margin-top: 12px;
+    border-radius: 12px;
+  }
+  .OptionsChat {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 10px;
+  }
+  .Write {
+    text-align: center;
+  }
+  .P_texAreaUser {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .PText {
+    width: calc(100% - 10px);
+  }
+  .Mb_Center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .P_FormOfStepNew {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  .P_Progresss {
+    position: relative;
+    top: 20px;
+    padding: 0 50px;
+    width: 100%;
+  }
+  .P_ImgStepNew {
+    margin-right: 0;
+  }
+  .btns_groupNew {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    position: relative;
+    top: 0;
+  }
+  .P_All_Loading {
+    left: 60%;
+  }
+  .BgBlueOv {
+    height: 300px;
+  }
+  .OvDeskText {
+    padding-right: 12px;
+    top: 95px;
+  }
+  .OVText {
+    padding-right: 12px;
+    font-size: 20px;
+  }
+  .BoxWhite {
+    padding: 16px;
+  }
+  .P_AreaWhite1 {
+    padding: 0 10px;
+  }
+}
